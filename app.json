@@ -1,0 +1,6 @@
+{
+  "name": "Election globe",
+  "description": "Simple webGL globe with node and express",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "keywords": ["webGL"],
+}
