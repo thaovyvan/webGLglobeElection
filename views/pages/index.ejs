@@ -61,7 +61,7 @@
       padding: 10px;
     }
 
-    .sport {
+    .tweet {
       display: none;
       font: 16px sans-serif;
       line-height: 26px;
@@ -72,40 +72,11 @@
       cursor: pointer;
     }
 
-    .sport:hover, .sport.active {
+    .tweet:hover, .tweet.active {
       font-size: 23px;
       color: #fff;
     }
 
-    #ce span {
-      display: none;
-    }
-
-    #ce {
-      width: 107px;
-      height: 55px;
-      display: block;
-      position: absolute;
-      bottom: 15px;
-      left: 20px;
-      background: url('imgs/ce.png');
-    }
-
-    #noWebGL {
-      visibility: hidden;
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      width: 600px;
-      margin-left: -300px;
-      padding: 3px;
-
-      color: #FF8248;
-      text-align: center;
-
-      border: 2px dotted #B32000;
-      border-radius: 5px;
-    }
   </style>
 
   <script type="text/javascript" src="third-party/Three/ThreeWebGL.js"></script>
@@ -130,9 +101,9 @@
           return new THREE.Color(colors[label]);
         });
 
-        $('.sport').show();
+        $('.tweet').show();
 
-        $('.sport').each(function(i)
+        $('.tweet').each(function(i)
         {
           var htmlcolor = colors[i].toString(16);
           htmlcolor = '000000'.substr(0, 6 - htmlcolor.length) + htmlcolor;
@@ -142,7 +113,7 @@
             $(this).click(function()
             {
               displayData(i+1);
-              $('.sport').removeClass('active');
+              $('.tweet').removeClass('active');
               $(this).addClass('active');
             });
           }
@@ -151,7 +122,7 @@
         $('#sAll').click(function()
         {
           displayData(false);
-          $('.sport').removeClass('active');
+          $('.tweet').removeClass('active');
         })
 
         function displayData(label)
@@ -171,7 +142,7 @@
             window.data = data;
             displayData(false);
             globe.animate();
-            $('#sAll').html('Show all workouts ('+(data.length/4)+')');
+            $('#sAll').html('Show all tweets('+(data.length/4)+')');
           },
           error: function(jqXHR, textStatus, errorThrown)
           {
@@ -187,39 +158,19 @@
   <div id="container"></div>
 
   <div id="info">
-    Created by Vojtěch Král <span class="bull">&bull;</span> Based on <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span
-class="bull">&bull;</span> Data acquired from&nbsp;&nbsp;<a href="http://endomondo.com/login" style="color: green; font-size: 14px;"><img src="imgs/endomondo.png"></a>
+    Created by Thaovy Van <span class="bull">&bull;</span> Based on <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span
+class="bull">&bull;</span> Data acquired from&nbsp;&nbsp;<a href="http://www.twitter.com" style="color: green; font-size: 14px;"></a>
   </div>
 
   <div id="currentInfo">
-    <div id="sRun" class="sport">Running</div>
-    <div id="sBike" class="sport">Cycling & Biking</div>
-    <div id="sWalk" class="sport">Walking</div>
-    <div id="sOther" class="sport">Other sports</div>
-    <div id="sAll" class="sport">&nbsp;</div>
+    <div id="sRun" class="tweet">#ImWithHer</div>
+    <div id="sBike" class="tweet">#MakeAmericaGreatAgain</div>
+    <div id="sAll" class="tweet">Show All</div>
   </div>
 
   <div id="title">
-    Endomondo Globe
+    Web globe for election tweets
   </div>
-
-  <a id="ce" href="http://www.chromeexperiments.com/globe">
-    <span>This is a Chrome Experiment</span>
-  </a>
-
-  <div id="noWebGL">
-    <h2>Sorry</h2>
-    <p>Your browser either disabled usage of WebGL or it doesn't support WebGL at all.</p>
-    <p>Perhaps a couple of screenshots could be of some comfort:</p>
-    <p>
-      <a href="imgs/screenshot/endo-globe-1.png" target="_blank"><img src="imgs/endo-globe-1.png"</a>
-      <a href="imgs/screenshot/endo-globe-2.png" target="_blank"><img src="imgs/endo-globe-2.png"</a>
-      <a href="imgs/screenshot/endo-globe-3.png" target="_blank"><img src="imgs/endo-globe-3.png"</a>
-      <a href="imgs/screenshot/endo-globe-4.png" target="_blank"><img src="imgs/endo-globe-4.png"</a>
-    </p>
-  </div>
-
-  <a href="https://github.com/kralyk/endo-globe" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 99;" src="imgs/forkme.png" alt="Fork me on GitHub"></a>
 
 </body>
 </html>
