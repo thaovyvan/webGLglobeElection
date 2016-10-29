@@ -2,7 +2,7 @@
 
 ## Summary
 
-This web app creates a data viualization of the unprecedented 2016 election. The dataset is retrieved from Twitter and searches for two tweets: ImWithHer and MakeAmericaGreatAgain. 
+This web app creates a data visualization of the unprecedented 2016 election. The dataset is retrieved from Twitter and searches for two tweets: ImWithHer and MakeAmericaGreatAgain. 
 
 [Production Build](https://immense-inlet-68085.herokuapp.com/)
 
