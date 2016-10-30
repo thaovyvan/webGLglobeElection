@@ -13,7 +13,7 @@ $(document).ready(function()
       var htmlcolor = colors[i].toString(16);
       htmlcolor = '000000'.substr(0, 6 - htmlcolor.length) + htmlcolor;
       $(this).css('border-left', '20px solid #'+htmlcolor);
-      if (i < 4)
+      if (i < 2)
       {
         $(this).click(function()
         {
@@ -47,7 +47,7 @@ $(document).ready(function()
         window.data = data;
         displayData(false);
         globe.animate();
-        $('#sAll').html('Show all tweets('+(data.length/4)+')');
+        $('#sAll').html('Show all tweets');
       },
       error: function(jqXHR, textStatus, errorThrown)
       {

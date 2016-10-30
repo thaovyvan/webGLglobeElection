@@ -42,9 +42,9 @@ class SListener(StreamListener):
 
 l = SListener()
 streamer = tweepy.Stream(auth=auth, listener=l)
-setTerms = ['draintheswamp']
+setTerms = ['ImWithHer']
 streamer.filter(track = setTerms)
 
-with open('electiontweets_trump.csv', 'wb') as csvfile:
+with open('electiontweets_hillary.csv', 'wb') as csvfile:
 	tweetwriter = csv.writer(csvfile, delimiter=',')
 	tweetwriter.writerow(data)
